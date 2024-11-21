@@ -1,0 +1,36 @@
+spring:
+  application:
+    name: dev-connector
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/devconnector?createDatabaseIfNotExist=true&serverTimezone=UTC
+    username:
+    password:
+  jpa:
+    #    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        order_by:
+          default_null_ordering: first
+    database: mysql
+    generate-ddl: on
+    hibernate:
+      ddl-auto: create
+  security:
+    user:
+      name:
+      password:
+
+logging:
+  level:
+    root: warn
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+    display-request-duration: true
+
+github-token:
+jwt-secret:
